@@ -1,0 +1,217 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000;
+    overflow: hidden;
+    touch-action: none;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-canvas {
+    display: block;
+    background-color: #87CEEB;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* Menu styles */
+#menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    color: white;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: gold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+button {
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 1.2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Character selection */
+.character-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.character-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.character-option:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.character-preview {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.character-preview.magenta {
+    background-color: #ff00ff;
+}
+
+.character-preview.cyan {
+    background-color: #00ffff;
+}
+
+.character-preview.yellow {
+    background-color: #ffff00;
+}
+
+.character-preview.red {
+    background-color: #ff0000;
+}
+
+/* Mobile Controls */
+#mobile-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 5;
+}
+
+#dpad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.horizontal-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+#dpad button {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    margin: 5px;
+    padding: 0;
+    opacity: 0.7;
+}
+
+#action-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+#action-buttons button {
+    width: 80px;
+    height: 60px;
+    margin: 5px;
+    opacity: 0.7;
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+    .hidden-desktop {
+        display: none !important;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+    
+    button {
+        font-size: 1.5rem;
+    }
+    
+    .character-preview {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    #dpad button {
+        width: 50px;
+        height: 50px;
+    }
+    
+    #action-buttons button {
+        width: 70px;
+        height: 50px;
+        font-size: 0.9rem;
+    }
+}

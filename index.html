@@ -1,20 +1,67 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Laetare Shooter</title>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      background: #111;
-    }
-    canvas {
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Confetti Quest: La Quête du Laetare</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Chargeur de scripts -->
+    <script src="js/imports.js"></script>
 </head>
 <body>
-  <script src="game.js"></script>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        <div id="mobile-controls" class="hidden-desktop">
+            <div id="dpad">
+                <button id="btn-up">⬆️</button>
+                <div class="horizontal-buttons">
+                    <button id="btn-left">⬅️</button>
+                    <button id="btn-right">➡️</button>
+                </div>
+                <button id="btn-down">⬇️</button>
+            </div>
+            <div id="action-buttons">
+                <button id="btn-jump">SAUTER</button>
+                <button id="btn-shoot">TIRER</button>
+            </div>
+        </div>
+        <div id="menu">
+            <h1>Confetti Quest: La Quête du Laetare</h1>
+            <div id="character-select" class="hidden">
+                <h2>Choisissez votre personnage</h2>
+                <div class="character-options">
+                    <div class="character-option" data-color="magenta">
+                        <div class="character-preview magenta"></div>
+                        <span>Magenta</span>
+                    </div>
+                    <div class="character-option" data-color="cyan">
+                        <div class="character-preview cyan"></div>
+                        <span>Cyan</span>
+                    </div>
+                    <div class="character-option" data-color="yellow">
+                        <div class="character-preview yellow"></div>
+                        <span>Jaune</span>
+                    </div>
+                    <div class="character-option" data-color="red">
+                        <div class="character-preview red"></div>
+                        <span>Rouge</span>
+                    </div>
+                </div>
+            </div>
+            <div id="main-menu">
+                <button id="btn-play">JOUER</button>
+                <button id="btn-instructions">INSTRUCTIONS</button>
+            </div>
+            <div id="instructions" class="hidden">
+                <h2>Instructions</h2>
+                <p>Un super méchant mi-femme mi-araignée s'est échappé du jeu vidéo en traversant l'écran et a volé le confetti d'or qui garantit harmonie et joie pendant le carnaval (Laetare) de Stavelot.</p>
+                <p>Votre mission: récupérer le confetti et le rendre aux Stavelotains!</p>
+                <h3>Contrôles:</h3>
+                <p>Desktop: Flèches pour se déplacer, Espace pour sauter, Z pour tirer</p>
+                <p>Mobile: Utilisez les boutons à l'écran</p>
+                <button id="btn-back">RETOUR</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
